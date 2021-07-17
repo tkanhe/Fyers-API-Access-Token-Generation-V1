@@ -6,4 +6,9 @@ pip install fyers_api
 ```
 ***You can also use Fyers REST API using python; in fact, it's twice as fast as Fyers Python API.***
 
+## Dependencies:
+- Selenium ```pip install selenium```
+- Chrome Webdriver https://chromedriver.chromium.org/downloads
+
+
 You can see Fyers official documentation at https://api-docs.fyers.in/v1
