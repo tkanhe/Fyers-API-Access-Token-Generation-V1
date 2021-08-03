@@ -1,6 +1,5 @@
 import requests
-import urllib.parse as urlparse
-from urllib.parse import parse_qs
+from urllib.parse import urlparse, parse_qs
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -42,14 +41,17 @@ def setup():
     driver.find_element_by_xpath("//button[@id='btn_id']").click()
     WebDriverWait(driver, 20).until((EC.url_changes(driver.current_url)))
 
-    parsed = urlparse.urlparse(driver.current_url)
+    parsed = urlparse(driver.current_url)
     token = parse_qs(parsed.query)['access_token'][0]
     write_file(token)
     print(requests.get('https://api.fyers.in/api/v1/get_profile', headers={"Authorization": token}).json())
 
 
 def check():
-    token = read_file()
+    try:
+        token = read_file()
+    except:
+        token = 'None'
     r1 = requests.get('https://api.fyers.in/api/v1/get_profile', headers={"Authorization": token})
     if r1.json()['s'] == 'ok':
         print('You already have a access token!')
