@@ -55,7 +55,10 @@ def setup():
 
 
 def check():
-    token = read_file()
+    try:
+        token = read_file()
+    except:
+        token = 'None'
     response = fyers.get_profile(token=token)
     if 'Invalid' in response['message'] or 'not' in response['message']:
         print('Getting a access token')
