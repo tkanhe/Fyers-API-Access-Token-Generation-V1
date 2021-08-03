@@ -1,6 +1,4 @@
-import urllib.parse as urlparse
-from urllib.parse import parse_qs
-
+from urllib.parse import urlparse, parse_qs
 from fyers_api import accessToken
 from fyers_api import fyersModel
 from selenium import webdriver
@@ -48,7 +46,7 @@ def setup():
     driver.find_element_by_xpath("//button[@id='btn_id']").click()
     WebDriverWait(driver, 20).until((EC.url_changes(driver.current_url)))
 
-    parsed = urlparse.urlparse(driver.current_url)
+    parsed = urlparse(driver.current_url)
     token = parse_qs(parsed.query)['access_token'][0]
     write_file(token)
     print(fyers.get_profile(token=token))
