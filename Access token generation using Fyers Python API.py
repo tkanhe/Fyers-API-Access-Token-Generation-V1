@@ -63,7 +63,7 @@ def check():
         setup()
     else:
         print('You already have a access token!')
-        print(fyers.get_profile(token=token))
+        print(response)
 
 
 check()
