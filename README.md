@@ -1,8 +1,7 @@
 # Fyers API Access Token Generation V1
 
 ### Method1 (Fyers REST API):
-- Faster,
-- you don't need to install fyers_api
+- Faster
 
 ### Method2 (Fyers Python API):
 - Install fyers_api using ```pip install fyers_api```
