@@ -1,14 +1,15 @@
-# Fyers-API
+# Fyers API Access Token Generation V1
 
-If you want to generate access token via Fyers Python API, you can install Fyers-API using 
-```
-pip install fyers_api
-```
-***You can also use Fyers REST API using python; in fact, it's twice as fast as Fyers Python API, and you don't need to install fyers_api.***
+### Method1 (Fyers REST API):
+- Faster,
+- you don't need to install fyers_api
 
-## Dependencies:
+### Method2 (Fyers Python API):
+- Install fyers_api using ```pip install fyers_api```
+
+### Dependencies:
 - Selenium ```pip install selenium```
 - Chrome Webdriver https://chromedriver.chromium.org/downloads
 
 
-You can see Fyers official documentation at https://api-docs.fyers.in/v1
+*You can see Fyers official documentation at https://api-docs.fyers.in/v1*.
